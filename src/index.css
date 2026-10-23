@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Shippori Mincho', 'Yu Mincho', 'Hiragino Mincho ProN', serif;
+    background-color: #faf6ee;
+    color: #231d17;
+  }
+}
+
+/* Washi paper subtle texture overlay */
+.washi-pattern {
+  background-color: #faf6ee;
+  background-image: radial-gradient(#d4a359 0.75px, transparent 0.75px), radial-gradient(#d4a359 0.75px, #faf6ee 0.75px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+  background-opacity: 0.15;
+}
+
+/* Wood grain texture */
+.wood-card {
+  background: linear-gradient(135deg, #d8bc95 0%, #c49f6b 50%, #b88f57 100%);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.4), 0 8px 20px -4px rgba(45, 26, 8, 0.3);
+}
+
+.wood-button {
+  background: linear-gradient(180deg, #f1dfc5 0%, #dfbe93 100%);
+  box-shadow: 0 4px 6px -1px rgba(66, 42, 20, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  border: 1px solid #b38b58;
+}
+
+.wood-button:hover:not(:disabled) {
+  background: linear-gradient(180deg, #f6e9d6 0%, #e9cca5 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px -2px rgba(66, 42, 20, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.wood-button:active:not(:disabled) {
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px -1px rgba(66, 42, 20, 0.2), inset 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* Red Seal / Hanko Stamp */
+.hanko-stamp {
+  border: 3px solid #c53d2f;
+  color: #c53d2f;
+  border-radius: 8px;
+  font-family: 'Yuji Boku', serif;
+  transform: rotate(-8deg);
+  box-shadow: 0 0 0 1px rgba(197, 61, 47, 0.2);
+}
