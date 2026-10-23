@@ -113,9 +113,12 @@ export function generateQuizQuestions(
   const candidates = filterKanji(list, minLevel, maxLevel);
   const activePool = candidates.length > 0 ? candidates : list;
 
-  // 出題候補をシャッフルし、出題数分を抽出
+  // 出題候補をシャッフルし、出題数分を抽出（questionCount <= 0 の場合は全問出題）
   const shuffledTargets = shuffleArray(activePool);
-  const targetCount = Math.min(questionCount, shuffledTargets.length);
+  const targetCount =
+    questionCount <= 0
+      ? shuffledTargets.length
+      : Math.min(questionCount, shuffledTargets.length);
   const selectedTargets = shuffledTargets.slice(0, targetCount);
 
   return selectedTargets.map((target) => {
